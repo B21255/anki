@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>BPepAMPred</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link type="text/css" href="../static/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="relative" align-image="center">
+        <img src="../static/BPepAMP.JPG" width="100%" height="300" alt="">
+    </div>
+    <div id="loader-wrapper" style="display:none;">
+        <div id="loader"></div>
+    </div>
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark navbar-expand-md bg-success justify-content-between"
+        style="background-color:yellowgreen;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link d-none d-lg-block" id="srchome_screen" href="#">Home<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li><a class="nav-link d-block d-lg-none" id="srchome_screen" href="#" data-toggle="collapse"
+                        data-target=".navbar-collapse" style="font-size:20px;">Home</a></li>
+
+                <li class="nav-item">
+                    <a class="nav-link d-none d-lg-block" id="srcupload_screen" href="#">Analysis</a>
+                </li>
+                <li><a class="nav-link d-block d-lg-none" id="srcupload_screen" href="#" data-toggle="collapse"
+                        data-target=".navbar-collapse" style="font-size:20px;">Analysis</a></li>
+                <li class="nav-item">
+                    <a class="nav-link d-none d-lg-block" id="srchelp_screen" href="../static/manual.pdf"
+                        target="_blank">Tutorial</a>
+                </li>
+                <li><a class="nav-link d-block d-lg-none" id="srchelp_screen" data-toggle="collapse"
+                        data-target=".navbar-collapse" href="../static/manual.pdf" target="_blank"
+                        style="font-size:20px;">Tutorial</a></li>
+                <li class="nav-item">
+                    <a class="nav-link d-none d-lg-block" id="srcabout_us_screen" href="#">Contact</a>
+                </li>
+                <li><a class="nav-link d-block d-lg-none" id="srcabout_us_screen" href="#" data-toggle="collapse"
+                        data-target=".navbar-collapse" style="font-size:20px;">Contact</a></li>
+
+                <li class="nav-item">
+                    <a class="nav-link d-none d-lg-block" id="srchelp_screen"
+                        href="http://backlin.cabgrid.res.in/blackpepper_amp_db/" target="_blank">BPepAMPdb</a>
+                </li>
+                <li><a class="nav-link d-block d-lg-none" id="srchelp_screen" data-toggle="collapse"
+                        data-target=".navbar-collapse" href="http://backlin.cabgrid.res.in/blackpepper_amp_db/"
+                        target="_blank" style="font-size:20px;">licence</a></li>
+                <li class="nav-item">
+                    <a class="nav-link d-none d-lg-block" id="srchelp_screen" href="../static/ICAR_Data_Use_Licence.pdf"
+                        target="_blank">Licence</a>
+                </li>
+                <li><a class="nav-link d-block d-lg-none" id="srchelp_screen" data-toggle="collapse"
+                        data-target=".navbar-collapse" href="../static/ICAR_Data_Use_Licence.pdf" target="_blank"
+                        style="font-size:20px;">licence</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--    Home Screen/ default screen-->
+    <div class="container-fluid" id="home_screen"
+        style="background-color: white; padding-left: 20px; padding-top: 20px; padding-bottom: 20px; font-size:18px; text-align:justify">
+        <h2>Welcome to BPepAMPred</h2>
+        Antimicrobial peptides (AMPs),known as ‘nature's antibiotics’,involved in host defence mechanism of several
+        species and are part of innate immunity in response to several pathogenic micro-organisms. These peptides
+        are often the first line of defense against invading pathogens which can inhibit bacterial growth by
+        interacting with microbial membranes or intracellular targets.The increase in the AMP resistance in plants
+        and animals has gained huge attention due to its effectiveness against chemical antibiotics resistant
+        microbial pathogens. Optimization and engineering of peptides can take care of toxicity and stability
+        issues but higher production cost makes screening of large numbers of peptides very expensive. Computational
+        approaches for AMP prediction may be one of the ways to overcome the cost constraint.
+        <br>
+        Antimicrobial peptides (AMPs),known as ‘nature's antibiotics’,involved in host defence mechanism of several
+        species and are part of innate immunity in response to several pathogenic micro-organisms. These peptides
+        are often the first line of defense against invading pathogens which can inhibit bacterial growth by
+        interacting with microbial membranes or intracellular targets.The increase in the AMP resistance in plants
+        and animals has gained huge attention due to its effectiveness against chemical antibiotics resistant
+        microbial pathogens. Optimization and engineering of peptides can take care of toxicity and stability
+        issues but higher production cost makes screening of large numbers of peptides very expensive. Computational
+        approaches for AMP prediction may be one of the ways to overcome the cost constraint.
+        <br>
+        We perform the computation on a Linux based HPC cluster environment using 100 cluster cores of Intel Xeon
+        Gold 6148 CPU with 2.40 GHz clock speed for each training instance.
+        For implementation, Keras (Chollet Francois, 2015) a high-level API for deep learning based on TensorFlow
+        (Abadi <i>et al.</i>, 2016) was used.
+        <br>
+        BPepAMPred is a user-friendly AMP prediction server where the user inputs the sequence in fasta format.
+        The multiple sequences can be uploaded but not exceeding 500.
+        The prediction accuracy of the server is 99.34%, MCC 0.9868 and F-score 99.34 was achieved for the combined
+        dataset
+        which was implemented in the server.
+        </span></p>
+
+    </div>
+    </div>
+
+    <!--UPLOAD SCREEN-->
+    <div id="upload_screen" style="background-color:white; width:100%; height:100%; display: block;">
+        <div class="row">
+            <div class="col-lg-12 custom-col">
+                <fieldset>
+                    <br>
+                    <form id="upload_data_form">
+
+                        <div class="form-group row" id="file_div_3">
+                            <label id="fileSelectLabel" class="col-lg-2 col-form-label" for="fileSelect"> <b>Upload
+                                    fasta file: </b></label>
+                            <div class="col-sm-8">
+                                <input type="file" class="form-control-plaintext" id="fileSelect">
+                            </div>
+                        </div>
+                        <div class="form-group row" id="file_div_4">
+                            <label class="col-lg-2 col-form-label" for="uploadBtn"></label>
+                            <div class="col-sm-8">
+                                <button type="button" class="btn btn-primary" id="uploadBtn"
+                                    onclick="uploadFile()">Analyse your data</button>
+                            </div>
+                        </div>
+
+                        <p id="sample" style="text-align:justify;font: Arial; font-size:20px;">Example <a
+                                href="../static/seq.fasta">sample file</a> file</p>
+
+                        <p id="uploadResponse" style="font: Arial; font-size:20px; color:red; display: none;">respose
+                            will be here</p>
+                        <p id="goToMR" style="font: Arial; font-size:20px; display: none;">Now go to <span
+                                style="font-size:22px"><b>Run Model</b></span> tab for the analysis.</p>
+                    </form>
+
+
+                    <!--Results Table-->
+                    <table class="styled-table" id="myTable"
+                        style="  margin-left: auto; margin-right: auto; display:none;">
+                        <thead>
+                            <tr>
+                                <th>Sl.No.</th>
+                                <th>Sequence ID</th>
+                                <th>Fragment</th>
+                                <th>Model Prediction</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <!--    # About us Screen-->
+    <div class="container-fluid" id="about_us_screen"
+        style="background-color:white;width:100%; height:100%;text-align:center; display: block;">
+        <br>
+        <div class="row">
+            <div class="col-lg-12 custom-col">
+                <div class="column">
+                    <div class="container">
+                        <font style="text-align:justify" size="4" face="arial" color: red>
+                            <div align="center">
+                                <table>
+                                    <tr>
+                                        <td align="center"> <a href="http://cabgrid.res.in/cabin/phdcompleted.aspx"
+                                                target="_new">Ankita Negi</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"> <a href=http://cabgrid.res.in/cabin/Bulbul.aspx
+                                                target="_new">Bulbul Ahmed</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"> <a
+                                                href=https://www.researchgate.net/profile/Kalpana-Singh-13
+                                                target="_new"> Kalpana Singh </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"> <a href=http://cabgrid.res.in/cabin/maiquebal.aspx
+                                                target="_new">Mir Asif Iquebal</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"> <a href=http://cabgrid.res.in/cabin/sarika.aspx
+                                                target="_new">Sarika </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"> <a href=http://cabgrid.res.in/cabin/dkumar.aspx
+                                                target="_new">Dinesh Kumar </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"> <a href=http://cabgrid.res.in/cabin/arai.aspx
+                                                target="_new">Anil Rai </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center"> <a href=http://cabgrid.res.in/cabin/ubangadi.aspx
+                                                target="_new">U B Angadi </a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </font>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!--------------------------- footer ----------------------------->
+<div class="footer">
+    <table style=" background-color: white; text-align: center; width:100%; text-align:center;">
+        <tbody>
+            <tr>
+                <td style="text-align: center; background-color: #C0C0C0; padding-right:30px" ;> <img
+                        src="static/iari-logo.png" alt="not coming" width="130" height="130"><br><a
+                        href="https://www.iari.res.in/" title='Goto IARI Webpage' target='_blank'>ICAR-IARI, New Delhi -
+                        110012</a></td>
+                <td style="text-align: center; background-color: #C0C0C0" ;> <img src="static/IASRI-logo.png"
+                        alt="not coming" width="130" height="130"><br><a href="https://iasri.icar.gov.in/"
+                        title='Goto IASRI Webpage' target='_blank'>ICAR-IASRI, New Delhi - 110012</a></td>
+                <td style="text-align: center; background-color: #C0C0C0" ;> <img src="static/icarlogo.gif"
+                        alt="not coming" width="130" height="130"><br><a href="https://icar.org.in/"
+                        title='Goto ICAR Webpage' target='_blank'>ICAR, New Delhi - 110012</a></td>
+                <td style="text-align: center; padding-top: 20px; background-color: #C0C0C0;">
+                    <script id="clustrmaps"
+                        src="//clustrmaps.com/map_v2.js?d=hp-ql5ZCMh7tHaLAYO_TnSBQJB4ajo4qC81wceIfkjU&cl=ffffff&w=a"></script>
+                    <br>Number of website Visitor
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<br>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="../static/script.js"></script>
+
+</html>
